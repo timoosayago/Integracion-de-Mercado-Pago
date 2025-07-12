@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Carrito | TimoStore</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <script src="https://sdk.mercadopago.com/js/v2"></script>
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <header class="navbar">
+    <div class="logo">TimoStore</div>
+    <nav>
+      <ul class="nav-links">
+        <li><a href="index.html">Inicio</a></li>
+        
+        <li><a href="productos.html">Ver Todos los Productos</a></li>
+        <li><a href="index.html#nosotros">Nosotros</a></li>
+        <li class="carrito">
+          <a href="carrito.html"><i class="fas fa-shopping-cart"></i><span id="contador-cart">0</span></a>
+        </li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="carrito-main">
+    <h2>Tu Carrito</h2>
+    <div class="carrito-items" id="lista-carrito"></div>
+    <button id="clear-cart-btn" class="clear-cart-btn">Vaciar Carrito</button>
+
+    <section class="contacto">
+      <h3>Datos de Envío</h3>
+      <div class="formulario-envio" id="formulario-envio">
+        <input type="text" name="nombre" placeholder="Nombre completo" required />
+        <input type="text" name="direccion" placeholder="Dirección de entrega" required />
+        <input type="tel" name="telefono" placeholder="Teléfono" required />
+        <input type="email" name="email" placeholder="Email" required />
+      </div>
+    </section>
+
+    <div class="carrito-pago">
+      <h3>Método de Pago</h3>
+      <label>
+        <input type="radio" name="pago" id="transferencia" value="transferencia" checked />
+        Transferencia Bancaria (4% Descuento)
+      </label>
+      <label>
+        <input type="radio" name="pago" id="efectivo" value="efectivo" />
+        Efectivo (4% Descuento)
+      </label>
+      <label>
+        <input type="radio" name="pago" id="tarjeta" value="tarjeta" />
+        Tarjeta de Crédito (con intereses)
+      </label>
+      <div class="cuotas-options" id="cuotas-options" style="display: none;">
+        <label>
+          <input type="radio" name="cuotas" value="1" checked /> 1 cuota (sin interés)
+        </label>
+        <label>
+          <input type="radio" name="cuotas" value="3" /> 3 cuotas (10% interés)
+        </label>
+        <label>
+          <input type="radio" name="cuotas" value="6" /> 6 cuotas (20% interés)
+        </label>
+        <label>
+          <input type="radio" name="cuotas" value="12" /> 12 cuotas (30% interés)
+        </label>
+      </div>
+    </div>
+
+    <div class="carrito-envio">
+      <h3>Opciones de Envío</h3>
+      <label>
+        <input type="radio" name="envio" id="correo-argentino" value="3000" data-method="Correo Argentino" checked />
+        Correo Argentino ($3000)
+      </label>
+      <label>
+        <input type="radio" name="envio" id="andreani" value="4500" data-method="Andreani" />
+        Andreani ($4500)
+      </label>
+      <label>
+        <input type="radio" name="envio" id="oca" value="4000" data-method="OCA" />
+        OCA ($4000)
+      </label>
+      <label>
+        <input type="radio" name="envio" id="retiro-local" value="0" data-method="Retiro en Local" />
+        Retiro en Local (Gratis)
+      </label>
+      <div class="envio-detalles" id="envio-detalles">
+        <h4>Detalles del Envío</h4>
+        <p>Método seleccionado: <span id="metodo-envio">Correo Argentino</span></p>
+        <p>Costo: $<span id="costo-envio">3000</span></p>
+      </div>
+    </div>
+
+    <div class="carrito-resumen">
+      <div class="carrito-subtotal">
+        Subtotal: $<span id="subtotal-carrito">0</span>
+      </div>
+      <div class="carrito-descuento">
+        Envío: $<span id="descuento-carrito">0</span>
+      </div>
+      <div class="carrito-total">
+        Total: $<span id="total-carrito">0</span>
+      </div>
+    <div style="text-align:center; margin-top: 20px;">
+        <button id="btn-pagar" onclick="pagar()" style="
+            background-color: #007bff;
+            color: white;
+            font-size: 20px;
+            padding: 12px 24px;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+        ">Finalizar compra</button>
+    </div>
+    
+    </div>
+
+    <div id="wallet_container"></div>
+    
+  </main>
+
+  <footer>
+    <div class="footer-content">
+      <p>© 2025 TimoStore. Todos los derechos reservados.</p>
+      <p>Contacto: <a href="mailto:soporte@timostore.com">soporte@timostore.com</a></p>
+    </div>
+  </footer>
+
+        
+        </body>
+        
+</html>

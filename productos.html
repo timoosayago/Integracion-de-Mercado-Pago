@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Productos | TimoStore</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <header class="navbar">
+    <div class="logo">TimoStore</div>
+    <nav>
+      <ul class="nav-links">
+        <li><a href="index.html">Inicio</a></li>
+        <li class="dropdown">
+          <a href="#productos" class="dropbtn">Categorías <i class="fas fa-chevron-down"></i></a>
+          <div class="dropdown-content">
+            <a href="#convertidores">Convertidores Smart</a>
+            <a href="#auriculares">Auriculares</a>
+            <a href="#camaras">Cámaras</a>
+            <a href="#accesorios">Accesorios</a>
+            <a href="#soportes">Soportes TV</a>
+          </div>
+        </li>
+        <li><a href="index.html#nosotros">Nosotros</a></li>
+        <li class="carrito">
+          <a href="carrito.html"><i class="fas fa-shopping-cart"></i><span id="contador">0</span></a>
+          <div id="mini-carrito" class="mini-carrito">
+            <div id="mini-carrito-items"></div>
+            <p id="mini-carrito-total">Total: $0</p>
+            <button id="clear-cart-btn" class="clear-cart-btn">Vaciar Carrito</button>
+            <button id="checkout-btn" class="checkout-btn" disabled>Ir al Carrito</button>
+          </div>
+        </li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="productos-main">
+    <h2>Todos los Productos</h2>
+    <div class="productos-container">
+      <aside class="filtro">
+        <h3>Filtrar por Categoría</h3>
+        <label><input type="checkbox" name="categoria" value="convertidores"> Convertidores Smart</label>
+        <label><input type="checkbox" name="categoria" value="auriculares"> Auriculares</label>
+        <label><input type="checkbox" name="categoria" value="camaras"> Cámaras</label>
+        <label><input type="checkbox" name="categoria" value="accesorios"> Accesorios</label>
+        <label><input type="checkbox" name="categoria" value="soportes"> Soportes TV</label>
+        <h3>Filtrar por Precio</h3>
+        <label><input type="checkbox" name="precio" value="0-15000"> $0 - $15.000</label>
+        <label><input type="checkbox" name="precio" value="15001-25000"> $15.001 - $25.000</label>
+        <label><input type="checkbox" name="precio" value="25001-999999"> $25.001+</label>
+      </aside>
+      <section class="productos-lista">
+        <div class="producto" data-categoria="convertidores" data-precio="20000">
+          <img src="imagenes/tv box 1.jpeg" alt="TV Box Ultra HD">
+          <h3>TV Box Ultra HD</h3>
+          <p class="descripcion">Resolución 4K, 64GB almacenamiento, control remoto incluido.</p>
+          <p class="precio">$20.000</p>
+          <button onclick="agregarAlCarrito('TV Box Ultra HD', 20000, 'imagenes/tv box 1.jpeg')">Agregar al carrito</button>
+        </div>
+        <div class="producto" data-categoria="convertidores" data-precio="25000">
+          <img src="imagenes/tv box 2.png" alt="TV Box Pro 4K">
+          <h3>TV Box Pro 4K</h3>
+          <p class="descripcion">Procesador Octa-Core, Android 11, Wi-Fi dual band.</p>
+          <p class="precio">$25.000</p>
+          <button onclick="agregarAlCarrito('TV Box Pro 4K', 25000, 'imagenes/tv box 2.png')">Agregar al carrito</button>
+        </div>
+        <div class="producto" data-categoria="convertidores" data-precio="30000">
+          <img src="imagenes/tv box 3.png" alt="TV Box Smart X">
+          <h3>TV Box Smart X</h3>
+          <p class="descripcion">Streaming fluido, Bluetooth 5.0, compatible con Netflix y YouTube.</p>
+          <p class="precio">$30.000</p>
+          <button onclick="agregarAlCarrito('TV Box Smart X', 30000, 'imagenes/tv box 3.png')">Agregar al carrito</button>
+        </div>
+        <div class="producto" data-categoria="auriculares" data-precio="15000">
+          <img src="imagenes/auriculares.jpg" alt="Auriculares Inalámbricos">
+          <h3>Auriculares Inalámbricos</h3>
+          <p class="descripcion">Cancelación de ruido, 20h de batería, Bluetooth 5.2.</p>
+          <p class="precio">$15.000</p>
+          <button onclick="agregarAlCarrito('Auriculares Inalámbricos', 15000, 'imagenes/auriculares.jpg')">Agregar al carrito</button>
+        </div>
+        <div class="producto" data-categoria="camaras" data-precio="18000">
+          <img src="imagenes/camara.jpg" alt="Cámara Smart">
+          <h3>Cámara Smart</h3>
+          <p class="descripcion">1080p, visión nocturna, control desde app móvil.</p>
+          <p class="precio">$18.000</p>
+          <button onclick="agregarAlCarrito('Cámara Smart', 18000, 'imagenes/camara.jpg')">Agregar al carrito</button>
+        </div>
+        <div class="producto" data-categoria="soportes" data-precio="10000">
+          <img src="imagenes/soporte.jpg" alt="Soporte TV">
+          <h3>Soporte TV</h3>
+          <p class="descripcion">Ajustable, soporta hasta 55 pulgadas, fácil instalación.</p>
+          <p class="precio">$10.000</p>
+          <button onclick="agregarAlCarrito('Soporte TV', 10000, 'imagenes/soporte.jpg')">Agregar al carrito</button>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <footer>
+    <div class="footer-content">
+      <p>© 2025 TimoStore. Todos los derechos reservados.</p>
+      <p>Contacto: <a href="mailto:soporte@timostore.com">soporte@timostore.com</a></p>
+    </div>
+  </footer>
+</body>
+</html>

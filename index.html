@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TimoStore - TV Box</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <header class="navbar">
+    <div class="logo">TimoStore</div>
+    <nav>
+      <ul class="nav-links">
+        <li><a href="#inicio">Inicio</a></li>
+        <li><a href="productos.html">Ver Todos los Productos</a></li>
+        <li><a href="#nosotros">Nosotros</a></li>
+        <li class="carrito">
+          <a href="carrito.html" aria-label="Ver carrito de compras"><i class="fas fa-shopping-cart"></i><span id="carrito-contador">0</span></a>
+          <div id="mini-carrito" class="mini-carrito">
+            <div id="mini-carrito-items"></div>
+            <p id="mini-carrito-total">Total: $0</p>
+            <button id="clear-cart-btn" class="clear-cart-btn">Vaciar Carrito</button>
+            <button id="checkout-btn" class="checkout-btn" disabled>Ir al Carrito</button>
+          </div>
+        </li>
+      </ul>
+    </nav>
+  </header>
+
+  <section id="inicio" class="destacados">
+    <h2>Productos Estrella</h2>
+    <div class="productos">
+      <div class="producto" data-nombre="TV Box Ultra HD" data-precio="20000" data-categoria="convertidores">
+        <img src="imagenes/tv_box_1.jpeg" alt="TV Box Ultra HD con resolución 4K">
+        <h3>TV Box Ultra HD</h3>
+        <p class="descripcion">Resolución 4K, 64GB almacenamiento, control remoto incluido.</p>
+        <p class="precio">$20.000</p>
+        <button class="agregar-carrito" onclick="agregarAlCarrito('TV Box Ultra HD', 20000, 'imagenes/tv_box_1.jpeg')">Agregar al carrito</button>
+      </div>
+      <div class="producto" data-nombre="TV Box Pro 4K" data-precio="25000" data-categoria="convertidores">
+        <img src="imagenes/tv_box_2.png" alt="TV Box Pro 4K con procesador Octa-Core">
+        <h3>TV Box Pro 4K</h3>
+        <p class="descripcion">Procesador Octa-Core, Android 11, Wi-Fi dual band.</p>
+        <p class="precio">$25.000</p>
+        <button class="agregar-carrito" onclick="agregarAlCarrito('TV Box Pro 4K', 25000, 'imagenes/tv_box_2.png')">Agregar al carrito</button>
+      </div>
+      <div class="producto" data-nombre="TV Box Smart X" data-precio="30000" data-categoria="convertidores">
+        <img src="imagenes/tv_box_3.png" alt="TV Box Smart X compatible con Netflix">
+        <h3>TV Box Smart X</h3>
+        <p class="descripcion">Streaming fluido, Bluetooth 5.0, compatible con Netflix y YouTube.</p>
+        <p class="precio">$30.000</p>
+        <button class="agregar-carrito" onclick="agregarAlCarrito('TV Box Smart X', 30000, 'imagenes/tv_box_3.png')">Agregar al carrito</button>
+      </div>
+    </div>
+  </section>
+
+  
+
+  <section id="nuevos" class="destacados">
+    <h2>Nuevos Productos</h2>
+    <div class="productos">
+      <div class="producto" data-nombre="Auriculares Inalámbricos" data-precio="15000" data-categoria="auriculares">
+        <img src="imagenes/auricular.png" alt="Auriculares Inalámbricos con cancelación de ruido">
+        <h3>Auriculares Inalámbricos</h3>
+        <p class="descripcion">Cancelación de ruido, 20h de batería, Bluetooth 5.2.</p>
+        <p class="precio">$15.000</p>
+        <button class="agregar-carrito" onclick="agregarAlCarrito('Auriculares Inalámbricos', 15000, 'imagenes/auricular.png')">Agregar al carrito</button>
+      </div>
+      <div class="producto" data-nombre="Cámara Smart" data-precio="18000" data-categoria="camaras">
+        <img src="imagenes/camara.webp" alt="Cámara Smart con visión nocturna">
+        <h3>Cámara Smart</h3>
+        <p class="descripcion">1080p, visión nocturna, control desde app móvil.</p>
+        <p class="precio">$18.000</p>
+        <button class="agregar-carrito" onclick="agregarAlCarrito('Cámara Smart', 18000, 'imagenes/camara.webp')">Agregar al carrito</button>
+      </div>
+      <div class="producto" data-nombre="Soporte TV" data-precio="10000" data-categoria="soportes">
+        <img src="imagenes/soporte.webp" alt="Soporte TV ajustable para 55 pulgadas">
+        <h3>Soporte TV</h3>
+        <p class="descripcion">Ajustable, soporta hasta 55 pulgadas, fácil instalación.</p>
+        <p class="precio">$10.000</p>
+        <button class="agregar-carrito" onclick="agregarAlCarrito('Soporte TV', 10000, 'imagenes/soporte.webp')">Agregar al carrito</button>
+      </div>
+    </div>
+  </section>
+
+  <section id="nosotros">
+    <h2>Sobre Nosotros</h2>
+    <div class="nosotros-container">
+      <img src="imagenes/logo.jpeg" alt="Equipo TimoStore" class="nosotros-img">
+      <div class="nosotros-texto">
+        <p>En <strong>TimoStore</strong> somos apasionados por la tecnología. Nos especializamos en TV Box de alta gama, brindando calidad, precio justo y atención personalizada.</p>
+        <p>Realizamos envíos a todo el país y aceptamos múltiples medios de pago.</p>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-content">
+      <p>© 2025 TimoStore. Todos los derechos reservados.</p>
+      <p>Contacto: <a href="mailto:soporte@timostore.com">soporte@timostore.com</a></p>
+    </div>
+  </footer>
+</body>
+</html>

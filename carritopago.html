@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Pago | TimoStore</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <header class="navbar">
+    <div class="logo">TimoStore</div>
+    <nav>
+      <ul class="nav-links">
+        <li><a href="index.html">Inicio</a></li>
+        <li class="dropdown">
+          <a href="index.html#productos" class="dropbtn">Categorías <i class="fas fa-chevron-down"></i></a>
+          <div class="dropdown-content">
+            <a href="index.html#convertidores">Convertidores Smart</a>
+            <a href="index.html#auriculares">Auriculares</a>
+            <a href="index.html#camaras">Cámaras</a>
+            <a href="index.html#accesorios">Accesorios</a>
+            <a href="index.html#soportes">Soportes TV</a>
+          </div>
+        </li>
+        <li><a href="index.html#nosotros">Nosotros</a></li>
+        <li class="carrito">
+          <a href="carrito.html"><i class="fas fa-shopping-cart"></i><span id="contador-cart">0</span></a>
+        </li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="pago-main">
+    <h2>Confirmación de Pago</h2>
+    <div class="pago-resumen">
+      <h3>Resumen del Pedido</h3>
+      <p>Subtotal: $<span id="pago-subtotal">0</span></p>
+      <p>Descuento: $<span id="pago-descuento">0</span></p>
+      <p>Descuento Ruleta: $<span id="pago-descuento-ruleta">0</span></p>
+      <p>Envío: $<span id="pago-envio">0</span> (<span id="pago-metodo-envio"></span>)</p>
+      <p>Total: $<span id="pago-total">0</span></p>
+      <p>Método de Pago: <span id="pago-metodo"></span></p>
+      <p id="pago-cuotas" style="display: none;">Cuotas: <span id="pago-cuotas-valor"></span></p>
+    </div>
+    <div class="pago-acciones">
+      <button id="pago-btn" class="pago-btn" disabled>Confirmar Pago</button>
+    </div>
+  </main>
+
+  <footer>
+    <div class="footer-content">
+      <p>© 2025 TimoStore. Todos los derechos reservados.</p>
+      <p>Contacto: <a href="mailto:soporte@timostore.com">soporte@timostore.com</a></p>
+    </div>
+  </footer>
+</body>
+</html>
